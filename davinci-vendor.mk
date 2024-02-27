@@ -21,6 +21,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/init/dpmd.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/dpmd.rc \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/audiosphere.xml \
+    vendor/xiaomi/davinci/proprietary/system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/permissions/dpmapi.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/dpmapi.xml \
     vendor/xiaomi/davinci/proprietary/system_ext/etc/permissions/qcrilhook.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/qcrilhook.xml \
@@ -229,6 +230,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/11_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/11_version_update_ecc_table.sql \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/12_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/12_version_update_ecc_table.sql \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/13_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/13_version_update_ecc_table.sql \
+    vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/14_version_update_ecc_table.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/14_version_update_ecc_table.sql \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/1_version_intro.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/1_version_intro.sql \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/2_version_add_wps_config.sql \
     vendor/xiaomi/davinci/proprietary/vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/upgrade/3_version_update_wps_config.sql \
@@ -313,28 +315,6 @@ PRODUCT_PACKAGES += \
     libsn100u_fw \
     libswvdec \
     libvppclient \
-    capi_v2_aptX_CLHDAD_Encoder \
-    capi_v2_aptX_Classic \
-    capi_v2_aptX_HD \
-    libVC1Dec \
-    libVC1DecDsp_skel \
-    libapps_mem_heap \
-    libarcsoft_dualcam_refocus_skel \
-    libcamera_nn_skel \
-    libcvpdsp_skel \
-    libdirac-capiv2 \
-    libdspCV_skel \
-    libdsp_streamer_add_constant \
-    libdsp_streamer_binning \
-    libdsp_streamer_skel \
-    libfastcvadsp \
-    libfastcvdsp_skel \
-    libhexagon_nn_skel \
-    libhexagon_nn_skel_secondary \
-    libscveObjectSegmentation_skel \
-    libscveT2T_skel \
-    libsns_device_mode_skel \
-    libsns_low_lat_stream_skel \
     libasphere \
     libshoebox \
     com.qti.sensor.imx582_davinci \
@@ -408,6 +388,7 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.uceservice@2.1 \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.3 \
+    deviceInfoServiceModule \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.gatekeeper@1.0-impl-qti \
     camera.qcom \
@@ -435,11 +416,11 @@ PRODUCT_PACKAGES += \
     lib-rtpsl \
     lib-siputility \
     lib-uceservice \
+    libFaceDetectpp-0.5.2 \
     libFaceGrade \
     libGPreqcancel \
     libGPreqcancel_svc \
     libHalSuperSensorServer \
-    libFaceDetectpp-0.5.2 \
     libQSEEComAPI \
     libSuperSensor \
     libSuperSensorCPU \
@@ -491,6 +472,7 @@ PRODUCT_PACKAGES += \
     libdrmfs \
     libdrmtime \
     libdsi_netctrl \
+    libfacedet \
     libft2vendor \
     libgdtap \
     libgf_hal \
@@ -510,7 +492,6 @@ PRODUCT_PACKAGES += \
     liblowi_wifihal \
     liblqe \
     libmdsprpc \
-    libfacedet \
     libmialgo_fs \
     libmialgo_rfs \
     libmialgo_sd \
@@ -657,6 +638,35 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@3.0_vendor \
     vendor.qti.latency@2.0 \
     vendor.qti.latency@2.1 \
+    capi_v2_aptX_CLHDAD_Encoder \
+    capi_v2_aptX_Classic \
+    capi_v2_aptX_HD \
+    capi_v2_dap_cpdp \
+    libVC1Dec \
+    libVC1DecDsp_skel \
+    libapps_mem_heap \
+    libarc_hta_driver_skel \
+    libarcsoft_dualcam_refocus_skel \
+    libarcsoft_hdrplus_hvx_skel \
+    libcamera_nn_skel \
+    libcvpdsp_skel \
+    libdirac-capiv2 \
+    libdspCV_skel \
+    libdsp_streamer_add_constant \
+    libdsp_streamer_binning \
+    libdsp_streamer_skel \
+    libfastcvadsp \
+    libfastcvdsp_skel \
+    libhexagon_nn_skel \
+    libhexagon_nn_skel_secondary \
+    libhta_dsp_skel \
+    libmialgo_rfs_cdsp_skel \
+    libscveObjectSegmentation_skel \
+    libscveT2T_skel \
+    libsnpe_dsp_v65_domains_v2_skel \
+    libsnpe_dsp_v66_domains_v2_skel \
+    libsns_device_mode_skel \
+    libsns_low_lat_stream_skel \
     com.qualcomm.qti.dpm.api@1.0_system_ext \
     fm_helium \
     lib-imsvideocodec \
@@ -680,12 +690,15 @@ PRODUCT_PACKAGES += \
     IWlanService \
     TimeService \
     PowerOffAlarm \
+    HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND \
+    HotwordEnrollmentXGoogleHEXAGON_WIDEBAND \
     QtiTelephonyService \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
     tcmclient \
     audiosphere \
+    com.android.hotwordenrollment.common.util \
     com.qti.dpmframework \
     dpmapi \
     qcrilhook \
